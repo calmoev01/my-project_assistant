@@ -17,7 +17,7 @@ def talk(text, lang="en"):
 
 def listen_command():
     recognizer = sr.Recognizer()
-    duration = 5
+    duration = 4
     fs = 16000
     print("Speak...")
     audio_data = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype='int16')
@@ -47,9 +47,25 @@ while True:
     elif "google" in cmd:
         talk("Opening Google")
         webbrowser.open("https://www.google.com")
+        
+    elif "my progress" in cmd:
+        talk("Opening progress")
+        webbrowser.open("https://cs50.me/cs50p")
+        
+    elif "Chat Gpt" in cmd:
+        talk("Opening GPT")
+        webbrowser.open("https://chatgpt.com/")
+        
+    elif "email" in cmd:
+        talk("Opening email")
+        webbrowser.open("https://mail.google.com/mail/u/0/#inbox")
+        
+    elif ("weather") in cmd:
+        talk("Opening weather")
+        webbrowser.open("https://www.msn.com/en-xl/weather/forecast/in-Dzhalakuduk,Andijan-Region?loc=eyJsIjoiRHpoYWxha3VkdWsiLCJyIjoiQW5kaWphbiBSZWdpb24iLCJjIjoiVXpiZWtpc3RhbiIsImkiOiJVWiIsImciOiJlbi14bCIsIngiOiI3Mi42MzA2MTUyMzQzNzUiLCJ5IjoiNDAuNzIyMjgyNDA5NjY3OTcifQ%3D%3D&weadegreetype=C&ocid=msedgntp&cvid=68c7d176a4134f3593b94fffd1d45b2f")
 
     elif "stop" in cmd or "exit" in cmd or "close" in cmd:
-        talk("Goodbye calmoev!")
+        talk("bye calmoev!")
         break
 
     else:
