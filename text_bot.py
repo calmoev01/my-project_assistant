@@ -69,5 +69,5 @@ def handle_message(message):
     save_user(message.from_user.id, message.from_user.username or "без username")
     log_message(message.from_user.id, message.from_user.username or "без username", message.text, reply)
 
-print("Бот запущен...")
+print("Бот приступил к работе...")
 bot.polling()
